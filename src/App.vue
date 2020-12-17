@@ -1,19 +1,28 @@
 <template>
   <div id="app">
-    <Container>
-    </Container>
+    <Container v-bind:weather="weather"> </Container>
   </div>
 </template>
 
 <script>
-import Container from './components/Container.vue'
+import Container from "./components/Container.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Container
-  }
-}
+    Container,
+  },
+  data() {
+    return {
+      weather: {
+        temp_real: 0,
+        temp_feel: -3.5,
+        humidity: 5,
+        wind: 20,
+      },
+    };
+  },
+};
 </script>
 
 <style>
@@ -28,6 +37,10 @@ body {
   justify-content: center;
   height: 100vh;
   background: rgb(244, 123, 186);
-  background: linear-gradient(-25deg, rgba(244, 123, 186, 0.5) 20%, rgba(90, 95, 245, 0.5) 80%);
+  background: linear-gradient(
+    -25deg,
+    rgba(244, 123, 186, 0.5) 20%,
+    rgba(90, 95, 245, 0.5) 80%
+  );
 }
 </style>
